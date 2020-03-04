@@ -12,14 +12,16 @@ export const countriesListUrl =
   'https://res.cloudinary.com/die9ji2vn/raw/upload/v1582139305/website-static/API/countries-list.json';
 export const countryDefault = 'Cambodia';
 
-let reservationEmailsBcc: EmailAddress[] = process.env.VUE_APP_EMAIL_BCC_LIST.split(',').map(item => ({
+const bccList = process.env.VUE_APP_EMAIL_BCC_LIST || '';
+let reservationEmailsBcc: EmailAddress[] = bccList.split(',').map(item => ({
   email: item
 }));
 
-if (process.env.VUE_APP_DEV_MODE == 1) {
+if (String(process.env.VUE_APP_DEV_MODE) === '1') {
+  const devEmail = process.env.VUE_APP_EMAIL_DEV || '';
   reservationEmailsBcc = [
     {
-      email: process.env.VUE_APP_EMAIL_DEV
+      email: devEmail
     }
   ];
 }
