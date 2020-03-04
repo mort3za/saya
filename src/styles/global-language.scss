@@ -1,0 +1,8 @@
+.hide-lang-en {
+  .markdown-content {
+    .en,
+    [lang='en'] {
+      display: none;
+    }
+  }
+}

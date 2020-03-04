@@ -1,32 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <v-app class="wrapper" id="app">
     <router-view />
-  </div>
+    <!-- <page-progress-bar-global v-if="shouldShowProgressBar"></page-progress-bar-global> -->
+    <transition name="fade">
+      <page-splash-screen v-if="isSplashScreenVisible"></page-splash-screen>
+    </transition>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import Vue from 'vue';
+import store from '@/store';
+import { appTitle } from '@/constants/app';
+const PageSplashScreen = () => import(/* webpackMode: "eager" */ '@/components/PageSplashScreen.vue');
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default Vue.extend({
+  name: 'app',
+  metaInfo: {
+    title: appTitle
+  },
+  components: { PageSplashScreen },
+  computed: {
+    isSplashScreenVisible(): boolean {
+      return (this as any).$store.getters['loading/isSplashScreenVisible'];
     }
   }
-}
+});
+</script>
+
+<style lang="scss">
+// global style
+@import '@/styles/global-main.scss';
 </style>

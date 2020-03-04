@@ -1,0 +1,54 @@
+@import '~material-design-icons-iconfont/dist/material-design-icons.css';
+@import './global-typography.scss';
+@import './global-language.scss';
+@import './global-animations.scss';
+@import './utility.scss';
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.page {
+  min-height: calc(100vh - #{rem($header-height-xs)});
+  min-height: calc(100 * var(--vh) - #{rem($header-height-xs)});
+  @include media-breakpoint-up(sm) {
+    min-height: calc(100vh - #{rem($header-height-sm)});
+    min-height: calc(100 * var(--vh) - #{rem($header-height-sm)});
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: $zindex-page;
+  .page-content {
+    flex-grow: 1;
+    z-index: $zindex-page-content;
+  }
+}
+
+@-webkit-keyframes autofill {
+  to {
+    color: white;
+    background: transparent;
+  }
+}
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
+
+// container
+.is-limited {
+  &.container {
+    max-width: 316px;
+  }
+  @include media-breakpoint-up(sm, $my-breakpoints) {
+    &.container {
+      max-width: 540px;
+    }
+  }
+  @include media-breakpoint-up(md, $my-breakpoints) {
+    &.container {
+      max-width: 912px;
+    }
+  }
+}

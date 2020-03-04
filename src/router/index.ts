@@ -1,30 +1,73 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-
-Vue.use(VueRouter);
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import store from '@/store';
 
 const routes = [
+  // {
+  //   path: '/testing',
+  //   component: () => import(/* webpackChunkName: "Test" */ '@/views/KitchenSink.vue')
+  // },
   {
-    path: "/",
-    name: "Home",
-    component: Home
+    name: 'home',
+    path: '/',
+    component: () => import(/* webpackChunkName: "Home" */ '@/views/HomePage.vue')
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: '/*/',
+    redirect: '/'
   }
 ];
 
+Vue.use(VueRouter);
+
+let unsubscribeStore: any = null;
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return new Promise(resolve => {
+      const loading = store.getters['loading/isLoading'];
+      if (loading) {
+        unsubscribeStore = store.subscribe((mutation, state) => {
+          if (mutation.type === 'loading/loading' && store.getters['loading/isLoading'] === false) {
+            resolve(savedPosition || { x: 0, y: 0 });
+            unsubscribeStore();
+          }
+        });
+      } else {
+        resolve(savedPosition || { x: 0, y: 0 });
+      }
+    });
+  }
+});
+
+// Auth guard
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    const isAuthenticated = store.getters['auth/isAuthenticated'];
+    if (isAuthenticated) {
+      next();
+    } else {
+      // if we have /login later, route to login page
+      next('/');
+    }
+  } else {
+    next();
+  }
+});
+
+// set/unset loading
+router.beforeResolve((to, from, next) => {
+  store.commit('loading/loading', true);
+  next();
+});
+
+router.afterEach((to, from) => {
+  const alwaysShowLoadingAtFirst = 700;
+  setTimeout(() => {
+    store.commit('loading/loading', false);
+  }, alwaysShowLoadingAtFirst);
 });
 
 export default router;
