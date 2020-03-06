@@ -4,7 +4,7 @@
 @import './global-animations.scss';
 @import './utility.scss';
 
-#app {
+html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,21 +34,4 @@
 input:-webkit-autofill {
   -webkit-animation-name: autofill;
   -webkit-animation-fill-mode: both;
-}
-
-// container
-.is-limited {
-  &.container {
-    max-width: 316px;
-  }
-  @include media-breakpoint-up(sm, $my-breakpoints) {
-    &.container {
-      max-width: 540px;
-    }
-  }
-  @include media-breakpoint-up(md, $my-breakpoints) {
-    &.container {
-      max-width: 912px;
-    }
-  }
 }

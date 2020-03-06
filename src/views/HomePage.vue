@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts">
-import store from '../store';
 const PageFooter = () => import(/* webpackMode: "eager" */ '@/components/PageFooter.vue');
 // const MarkdownBlock = () => import(/* webpackMode: "eager" */ '@/components/MarkdownBlock.vue');
 // const PageHeader = () => import(/* webpackMode: "eager" */ '@/components/PageHeader.vue');
