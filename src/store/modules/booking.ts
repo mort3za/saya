@@ -19,29 +19,26 @@ const steps: { [name: string]: bookingStep } = {
   confirmDates: {
     id: 1
   },
-  auth: {
+  confirmGuests: {
     id: 2
   },
-  confirmGuests: {
+  confirmBooking: {
     id: 3
   },
-  confirmBooking: {
-    id: 4
-  },
   reviewPolicies: {
-    id: 5,
+    id: 4,
     title: 'Review Rules'
   },
   customerInfo: {
-    id: 6,
+    id: 5,
     title: 'Contact Info'
   },
   paymentInfo: {
-    id: 7,
+    id: 6,
     title: 'Payment'
   },
   thankYou: {
-    id: 8,
+    id: 7,
     title: 'Thank You!'
   }
 };
@@ -57,7 +54,7 @@ const defaultState = {
   countriesList: [],
   bookingInfo: {
     returnUrl: '/',
-    resort: {},
+    subjectItem: {},
     roomDescriptionHTML: '',
     guests: {
       adults: 1,
@@ -85,8 +82,8 @@ const defaultState = {
   finalPrice: 0,
   reservationId: 0,
   reservationDetails: {},
-  isPaymentLoading: false,
-  paymentError: ''
+  isNextStepLoading: false,
+  contactInfoError: ''
 };
 
 export default {
@@ -95,6 +92,12 @@ export default {
   mutations: {
     updateCountriesList(state, payload) {
       state.countriesList = payload;
+    },
+    updateContactInfoError(state, payload) {
+      state.contactInfoError = payload;
+    },
+    updateIsNextStepLoading(state, payload) {
+      state.isNextStepLoading = payload;
     },
     updateDialog(state, payload) {
       state.dialog = payload;
@@ -154,8 +157,8 @@ export default {
     updateReturnUrl(state, payload) {
       state.bookingInfo.returnUrl = payload;
     },
-    updateResort(state, payload) {
-      state.bookingInfo.resort = payload;
+    updateSubjectItem(state, payload) {
+      state.bookingInfo.subjectItem = payload;
     },
     updateReservationId(state, payload) {
       state.reservationId = payload;
@@ -176,6 +179,12 @@ export default {
     }
   },
   actions: {
+    updateContactInfoError(context, payload) {
+      context.commit('updateContactInfoError', payload);
+    },
+    updateIsNextStepLoading(context, payload) {
+      context.commit('updateIsNextStepLoading', payload);
+    },
     updateCountriesList(context, payload) {
       context.commit('updateCountriesList', payload);
     },
@@ -191,8 +200,8 @@ export default {
     cancelBooking(context) {
       context.commit('resetState');
     },
-    startBooking(context, { resort, returnUrl }) {
-      context.commit('updateResort', resort);
+    startBooking(context, { subjectItem, returnUrl }) {
+      context.commit('updateSubjectItem', subjectItem);
       context.commit('updateReturnUrl', returnUrl);
       context.commit('updateCurrentStep', context.state.steps.confirmDates);
     },
@@ -393,6 +402,12 @@ export default {
     countriesList: state => {
       return state.countriesList || [];
     },
+    contactInfoError: state => {
+      return state.contactInfoError;
+    },
+    isNextStepLoading: state => {
+      return state.isNextStepLoading;
+    },
     bookingInfo(state) {
       return state.bookingInfo;
     },
@@ -412,7 +427,7 @@ export default {
             amount
           },
           email: store.getters['auth/user'].userName,
-          phone: `+${bookingInfo.phoneCountry.callingCodes[0]}` + bookingInfo.phoneNumber
+          phone: `+${bookingInfo.phoneCountry && bookingInfo.phoneCountry.callingCodes[0]}` + bookingInfo.phoneNumber
         }
       };
     },
@@ -441,7 +456,7 @@ export default {
           phoneCountry: bookingInfo.phoneCountry.name,
           phone: `+ (${bookingInfo.phoneCountry.callingCodes[0]}) ` + bookingInfo.phoneNumber,
           guests: bookingInfo.guests,
-          resort: bookingInfo.resort,
+          resort: bookingInfo.subjectItem,
           roomDescriptionHTML: bookingInfo.roomDescriptionHTML,
           nightsCount: prices.length,
           prices,
@@ -451,7 +466,6 @@ export default {
       };
     },
     reservationFailEmailData: (state, getters) => ({ notificationType }) => {
-      console.log('notificationType', notificationType);
       const bookingInfo = state.bookingInfo;
       const prices = getters.prices({ decimalDigits: 2, formattedDate: true });
       return {
@@ -468,7 +482,7 @@ export default {
           phoneCountry: bookingInfo.phoneCountry.name,
           phone: `+ (${bookingInfo.phoneCountry.callingCodes[0]}) ` + bookingInfo.phoneNumber,
           guests: bookingInfo.guests,
-          resort: bookingInfo.resort,
+          resort: bookingInfo.subjectItem,
           nightsCount: prices.length,
           prices,
           vat: getters.computedVAT(),
