@@ -15,6 +15,6 @@ export const dark = {
   darkBlue: '#141527',
 
   white: '#FFFFFF',
-  light: '#FDE9C9',
+  light: '#C4C4C4',
   dark: '#121212'
 };

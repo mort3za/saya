@@ -13,13 +13,12 @@ $body-font-family: Raleway, sans-serif;
 $font-path: '~@/assets/font';
 
 // z-index
-/*
-page-header
-page
-  page-content
-  booking-bar
-  page-footer
-*/
+// -------------------------
+// page-header
+// page
+// page-content
+// booking-bar
+// page-footer
 $zindex-splash-screen: 8;
 $zindex-page-header: 7;
 $zindex-page: 1;
@@ -27,29 +26,16 @@ $zindex-page-content: 2;
 $booking-bar-zindex: 3;
 $zindex-page-footer: 2;
 
-// loading
-$loading-transition-time: 500ms;
-
 // spacing
+// --------------------------
 $header-height-xs: 56px;
 $header-height-sm: 80px;
 
-// TODO: remove usage of bootstrap breakpoints. These breakpoints are different than $vuetify.breakpoint.thresholds
-// grid https://vuetifyjs.com/en/customization/breakpoints
-$my-breakpoints: (
-  xxs: 0,
-  xs: 376px,
-  sm: 600px,
-  md: 960px,
-  lg: 1280px - 16px,
-  xl: 1920px - 16px,
-  xxl: 2560px - 16px
-);
-
-$font-weights: () !default;
+$font-weights: ();
+// prettier-ignore
 $font-weights: map-deep-merge(
   (
-    'thin': 100,
+    // 'thin': 100,
     'light': 300,
     'regular': 400,
     'medium': 500,
@@ -62,20 +48,22 @@ $font-weights: map-deep-merge(
 );
 
 // grid
+// --------------------------
 $spacer: 4px;
 
 $grid-breakpoints: ();
 $grid-breakpoints: map-deep-merge(
   (
-    'xs': 0,
+    'xxs': 0,
+    'xs': 375,
     'sm': 600px,
     'md': 960px,
     'lg': 1280px - 16px,
-    'xl': 1920px - 16px
+    'xl': 1920px - 16px,
+    'xxl': 2560px - 16px
   ),
   $grid-breakpoints
 );
-
 
 $grid-gutter: $spacer * 8;
 $form-grid-gutter: $spacer * 2;
@@ -106,11 +94,18 @@ $container-max-widths: map-deep-merge(
 );
 
 $display-breakpoints: ();
+// prettier-ignore
 $display-breakpoints: map-deep-merge(
   (
     'print-only': 'only print',
     'screen-only': 'only screen',
-    'xs-only': 'only screen and (max-width: #{map-get($grid-breakpoints, 'sm') - 1})',
+    // customized:
+    'xxs-only': 'only screen and (max-width: #{map-get($grid-breakpoints, 'xs') - 1})',
+    // customized:
+    'xs-only': 'only screen and (min-width: #{map-get($grid-breakpoints, 'xs')}) and (max-width: #{map-get($grid-breakpoints, 'sm') - 1})',
+    'xs-and-down': 'only screen and (max-width: #{map-get($grid-breakpoints, 'sm') - 1})',
+    'xs-and-up': 'only screen and (min-width: #{map-get($grid-breakpoints, 'xs')})',
+    // original:
     'sm-only': 'only screen and (min-width: #{map-get($grid-breakpoints, 'sm')}) and (max-width: #{map-get($grid-breakpoints, 'md') - 1})',
     'sm-and-down': 'only screen and (max-width: #{map-get($grid-breakpoints, 'md') - 1})',
     'sm-and-up': 'only screen and (min-width: #{map-get($grid-breakpoints, 'sm')})',
@@ -126,16 +121,21 @@ $display-breakpoints: map-deep-merge(
 );
 
 // typography
+// --------------------------
 $btn-letter-spacing: 0;
 
+// others
+// --------------------------
 $border-radius-root: 4px;
 
+// export to JavaScript
+// --------------------------
 :export {
   zindexSplashScreen: $zindex-splash-screen;
 }
 
 // --------------------------------------------------------
-// Vuetify 2.2.3 variables
+// Vuetify 2.2.15 variables
 // --------------------------------------------------------
 
 // $color-pack: true !default;
@@ -147,15 +147,19 @@ $border-radius-root: 4px;
 
 // $spacer: 4px !default;
 
-// $spacers: ();
-// @for $i from 0 through 12 {
-//   $spacers: map-merge($spacers, ($i: $spacer * $i))
-// };
+// $spacers: () !default;
+// @if (type-of($spacers) == list) {
+//   @for $i from 0 through 12 {
+//     $spacers: map-merge($spacers, ($i: $spacer * $i))
+//   }
+// }
 
-// $negative-spacers: ();
-// @for $i from 1 through 12 {
-//   $negative-spacers: map-merge($negative-spacers, ("n" + $i: -$spacer * $i))
-// };
+// $negative-spacers: () !default;
+// @if (type-of($negative-spacers) == list) {
+//   @for $i from 1 through 12 {
+//     $negative-spacers: map-merge($negative-spacers, ("n" + $i: -$spacer * $i))
+//   }
+// }
 
 // $grid-breakpoints: () !default;
 // $grid-breakpoints: map-deep-merge(
