@@ -70,7 +70,7 @@ $grid-gutter: $spacer * 8;
 $form-grid-gutter: $spacer * 2;
 $grid-columns: 5;
 
-$container-padding-x: $grid-gutter / 2;
+$container-padding-x: rem(24px);
 
 $grid-gutters: ();
 $grid-gutters: map-deep-merge(
@@ -87,9 +87,9 @@ $grid-gutters: map-deep-merge(
 $container-max-widths: ();
 $container-max-widths: map-deep-merge(
   (
-    'md': map-get($grid-breakpoints, 'md') * 0.9375,
-    'lg': map-get($grid-breakpoints, 'lg') * 0.9375,
-    'xl': map-get($grid-breakpoints, 'xl') * 0.9375
+    'md': rem(852px),
+    'lg': rem(852px),
+    'xl': rem(852px)
   ),
   $container-max-widths
 );
@@ -142,7 +142,7 @@ $headings: map-deep-merge(
     'h1': (
       'size': rem(232px),
       'weight': bold,
-      'line-height': rem(272px),
+      'line-height': 0.862068967,
       'letter-spacing': normal,
       'font-family': $heading-font-family
     ),
@@ -206,7 +206,7 @@ $headings: map-deep-merge(
       'size': rem(22px),
       'weight': 500,
       'letter-spacing': normal,
-      'line-height': 1.5rem,
+      'line-height': 1.1818181,
       'font-family': $body-font-family
     ),
     'caption': (

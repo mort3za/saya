@@ -4,8 +4,16 @@
     <div class="page">
       <div class="page-content">
         <div class="page-home--content">
-          <div class="home--hero">
-            <h1 class="pt-30 pb-20 text-center" :class="[$vuetify.breakpoint.smAndUp ? 'display-4' : 'display-3']">Saya</h1>
+          <div class="primary em-high">
+            <v-container class="pt-30 pb-10">
+              <h1 class="pb-10 mb-0" :class="[$vuetify.breakpoint.smAndUp ? 'display-4' : 'display-3']">
+                Saya
+              </h1>
+              <p class="body-1 py-8">
+                Saya is the premier hotel software suite for Vietnam. Saya combines an end-to-end hotel management
+                system with an AI-powered marketing and customer data platform designed to maximise your bookings.
+              </p>
+            </v-container>
           </div>
         </div>
       </div>
@@ -24,11 +32,6 @@ export default {
     // PageFooter
     // PageHeader
     // MarkdownBlock
-  },
-  methods: {
-    hideSplashScreen() {
-      (this as any).$store.commit('loading/updateIsSplashScreenVisible', false);
-    }
   }
 };
 </script>
@@ -36,8 +39,4 @@ export default {
 <style lang="scss">
 @import '@/styles/utility.scss';
 </style>
-<style lang="scss" scoped>
-.home--hero {
-  background: map-get($red, 'base');
-}
-</style>
+<style lang="scss" scoped></style>

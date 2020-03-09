@@ -1,0 +1,50 @@
+// emphasis colors
+.theme--dark {
+  .primary {
+    &.em-high {
+      color: rgba(map-get($orange, 'lighten-4'), 0.87);
+    }
+    &.em-medium {
+      color: rgba(map-get($orange, 'lighten-4'), 0.54);
+    }
+    &.em-disabled {
+      color: rgba(map-get($shades, 'black'), 0.38);
+    }
+  }
+  .secondary {
+    &.em-high {
+      color: rgba(map-get($shades, 'black'), 0.87);
+    }
+    &.em-medium {
+      color: rgba(map-get($shades, 'black'), 0.54);
+    }
+    &.em-disabled {
+      color: rgba(map-get($shades, 'black'), 0.38);
+    }
+  }
+  .background {
+    &.em-high {
+      color: rgba(map-get($orange, 'lighten-4'), 0.95);
+    }
+    &.em-medium {
+      color: rgba(map-get($orange, 'lighten-4'), 0.9);
+    }
+    &.em-disabled {
+      color: rgba(map-get($orange, 'lighten-4'), 0.38);
+    }
+  }
+  .surface {
+    &.em-high {
+      color: rgba(map-get($orange, 'lighten-4'), 0.95);
+    }
+    &.em-medium {
+      color: rgba(map-get($orange, 'lighten-4'), 0.9);
+    }
+    &.em-disabled {
+      color: rgba(map-get($shades, 'white'), 0.38);
+    }
+  }
+  .error {
+    color: rgba(map-get($shades, 'black'), 0.87);
+  }
+}
