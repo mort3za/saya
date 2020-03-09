@@ -4,23 +4,24 @@
     <div class="page">
       <div class="page-content">
         <div class="page-home--content">
-          this is homepage
+          <div class="home--hero">
+            <h1 class="pt-30 pb-20 text-center" :class="[$vuetify.breakpoint.smAndUp ? 'display-4' : 'display-3']">Saya</h1>
+          </div>
         </div>
       </div>
-      <page-footer></page-footer>
+      <!-- <page-footer></page-footer> -->
     </div>
   </div>
 </template>
 
 <script lang="ts">
-const PageFooter = () => import(/* webpackMode: "eager" */ '@/components/PageFooter.vue');
+// const PageFooter = () => import(/* webpackMode: "eager" */ '@/components/PageFooter.vue');
 // const MarkdownBlock = () => import(/* webpackMode: "eager" */ '@/components/MarkdownBlock.vue');
-// const PageHeader = () => import(/* webpackMode: "eager" */ '@/components/PageHeader.vue');
 
 export default {
   name: 'home-page',
   components: {
-    PageFooter
+    // PageFooter
     // PageHeader
     // MarkdownBlock
   },
@@ -35,4 +36,8 @@ export default {
 <style lang="scss">
 @import '@/styles/utility.scss';
 </style>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.home--hero {
+  background: map-get($red, 'base');
+}
+</style>
