@@ -5,7 +5,7 @@ export const dark = {
   secondary: '#FDE9C9',
   // success: '#E5B5CE',
   // green: '#4B7F52',
-  // anchor: '#F68B27',
+  anchor: '#EA5455',
   error: '#F68B27',
   // red: '#EB5757',
   // pink: '#E5B5CE',
