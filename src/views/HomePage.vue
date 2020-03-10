@@ -26,7 +26,7 @@
               "
             ></v-img>
           </div>
-          <banner-text-full :title="'Built for<br />Vietnam'"></banner-text-full>
+          <banner-text-full :title="'Built for Vietnam'"></banner-text-full>
           <div class="background em-medium">
             <v-container class="py-20">
               <p class="body-1 mb-20">
@@ -35,7 +35,6 @@
                 Vietnamese bank accounts right out of the box - and with only 10% commission.
               </p>
               <v-img
-                class="mx-7"
                 :src="
                   transformCloudinaryUrl(
                     'https://res.cloudinary.com/whynotearth/image/upload/v1583766685/Saya/home-speaking_dujprx.png',
@@ -45,7 +44,7 @@
               ></v-img>
             </v-container>
           </div>
-          <banner-text-full :title="'Take Control<br />of Your Brand'"></banner-text-full>
+          <banner-text-full :title="'Take Control of Your Brand'"></banner-text-full>
           <div class="background em-medium">
             <v-container class="py-20">
               <p class="body-1 mb-20">
@@ -55,7 +54,6 @@
                 that retains ownership of your customers.
               </p>
               <v-img
-                class="mx-7"
                 :src="
                   transformCloudinaryUrl(
                     'https://res.cloudinary.com/whynotearth/image/upload/v1583768734/Saya/home-personalization_uwcduc.png',
@@ -65,7 +63,7 @@
               ></v-img>
             </v-container>
           </div>
-          <banner-text-full :title="'Boost Your<br />Presence with<br />AI-Driven<br />Marketing'"></banner-text-full>
+          <banner-text-full :title="'Boost Your Presence with AI-Driven Marketing'"></banner-text-full>
           <div class="background em-medium">
             <v-container class="py-20">
               <p class="body-1 mb-6">
@@ -77,7 +75,6 @@
               <v-img
                 max-height="336"
                 contain=""
-                class="mx-7"
                 :src="
                   transformCloudinaryUrl(
                     'https://res.cloudinary.com/whynotearth/image/upload/v1583769164/Saya/home-chart_ocobah.png',
@@ -97,22 +94,99 @@
             </v-container>
           </div>
           <banner-text-full title="Marketing"></banner-text-full>
+          <!-- features -->
           <div class="background em-medium">
             <v-container class="py-20">
               <v-row>
-                <v-col cols="5" v-for="feature in features1" :key="feature.id" class="py-10">
+                <v-col cols="4" v-for="feature in features1" :key="feature.id" class="py-10">
                   <feature-description-iconized :model="feature"></feature-description-iconized>
                 </v-col>
               </v-row>
             </v-container>
           </div>
 
-          <banner-text-full :title="'Hotel<br />Management'"></banner-text-full>
+          <banner-text-full :title="'Hotel Management'"></banner-text-full>
+          <!-- features -->
           <div class="background em-medium">
             <v-container class="py-20">
               <v-row>
-                <v-col cols="5" v-for="feature in features2" :key="feature.id" class="py-10">
+                <v-col cols="4" v-for="feature in features2" :key="feature.id" class="py-10">
                   <feature-description-iconized :model="feature"></feature-description-iconized>
+                </v-col>
+              </v-row>
+            </v-container>
+          </div>
+
+          <!-- who we are -->
+          <banner-text-full :title="'Who We Are'"></banner-text-full>
+          <div class="background em-medium">
+            <v-container class="py-20">
+              <div class="body-1 mb-20">
+                <p>
+                  WNE are a team based in southeast asia who make best-in-class enterprise level software for
+                  medium-to-large companies that unifies all of their marketing, sales processes, and online branding.
+                </p>
+                <p>
+                  Sayas clients currently include Volkswagen, Browtricks, and the vKirirom Pine Resort. Collectively,
+                  our team have worked with Google, Amazon, Airbnb, and Goldman Sachs.
+                </p>
+              </div>
+
+              <!-- gallery -->
+              <v-row>
+                <v-col>
+                  <v-img
+                    contain
+                    :src="
+                      transformCloudinaryUrl(
+                        'https://res.cloudinary.com/whynotearth/image/upload/v1583834583/Saya/portfolio-1_hcgzej.png',
+                        'f_auto'
+                      )
+                    "
+                    alt="vKirirom Pine Resort"
+                  ></v-img>
+                </v-col>
+              </v-row>
+
+              <!-- row 2 -->
+              <v-row>
+                <v-col cols="6">
+                  <v-img
+                    contain
+                    :src="
+                      transformCloudinaryUrl(
+                        'https://res.cloudinary.com/whynotearth/image/upload/v1583834055/Saya/portfolio-2_qkmij6.png',
+                        'f_auto'
+                      )
+                    "
+                    alt=""
+                  ></v-img>
+                </v-col>
+                <v-col cols="6">
+                  <v-img
+                    contain
+                    :src="
+                      transformCloudinaryUrl(
+                        'https://res.cloudinary.com/whynotearth/image/upload/v1583836039/Saya/portfolio-3_ebcigy.png',
+                        'f_auto'
+                      )
+                    "
+                    alt=""
+                  ></v-img>
+                </v-col>
+              </v-row>
+              <v-row>
+                <v-col>
+                  <v-img
+                    contain
+                    :src="
+                      transformCloudinaryUrl(
+                        'https://res.cloudinary.com/whynotearth/image/upload/v1583834077/Saya/portfolio-4_w7lrpc.png',
+                        'f_auto'
+                      )
+                    "
+                    alt=""
+                  ></v-img>
                 </v-col>
               </v-row>
             </v-container>

@@ -1,7 +1,11 @@
 <template>
   <div class="primary em-high">
     <v-container class="py-9">
-      <h2 class="display-3 mb-0 text-transform-uppercase" v-html="title"></h2>
+      <v-row no-gutters="">
+        <v-col cols="8">
+          <h2 class="display-3 mb-0 text-transform-uppercase" v-html="title"></h2>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>

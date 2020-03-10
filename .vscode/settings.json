@@ -5,5 +5,6 @@
     "titleBar.activeBackground": "#cf2f2f",
     "titleBar.inactiveBackground": "#681f1f",
     "titleBar.activeForeground": "#f3f3f3"
-  }
+  },
+  "editor.wordBasedSuggestions": false
 }

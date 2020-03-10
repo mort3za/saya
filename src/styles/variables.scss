@@ -66,30 +66,30 @@ $grid-breakpoints: map-deep-merge(
   $grid-breakpoints
 );
 
-$grid-gutter: $spacer * 8;
+$grid-gutter: $spacer * 6;
 $form-grid-gutter: $spacer * 2;
-$grid-columns: 15;
+$grid-columns: 12;
 
-$container-padding-x: rem(24px);
+$container-padding-x: rem(12px);
 
-$grid-gutters: ();
-$grid-gutters: map-deep-merge(
-  (
-    'xs': $grid-gutter / 12,
-    'sm': $grid-gutter / 6,
-    'md': $grid-gutter / 3,
-    'lg': $grid-gutter * 2/3,
-    'xl': $grid-gutter
-  ),
-  $grid-gutters
-);
+// $grid-gutters: ();
+// $grid-gutters: map-deep-merge(
+//   (
+//     'xs': $grid-gutter / 12,
+//     'sm': $grid-gutter / 6,
+//     'md': $grid-gutter / 3,
+//     'lg': $grid-gutter * 2/3,
+//     'xl': $grid-gutter
+//   ),
+//   $grid-gutters
+// );
 
 $container-max-widths: ();
 $container-max-widths: map-deep-merge(
   (
-    'md': rem(852px),
-    'lg': rem(852px),
-    'xl': rem(852px)
+    'md': rem(900px),
+    'lg': rem(900px),
+    'xl': rem(900px)
   ),
   $container-max-widths
 );
