@@ -3,9 +3,33 @@
 
 // spacings
 // -----------------------
+.py-20 {
+  padding-top: rem(80px) !important;
+  padding-bottom: rem(80px) !important;
+}
+.py-30 {
+  padding-top: rem(120px) !important;
+  padding-bottom: rem(120px) !important;
+}
+.pt-20 {
+  padding-top: rem(80px) !important;
+}
 .pt-30 {
   padding-top: rem(120px) !important;
 }
 .pb-20 {
   padding-bottom: rem(80px) !important;
+}
+.pb-30 {
+  padding-bottom: rem(80px) !important;
+}
+.my-20 {
+  margin-top: rem(80px) !important;
+  margin-bottom: rem(80px) !important;
+}
+.mb-20 {
+  margin-bottom: rem(80px) !important;
+}
+.mt-20 {
+  margin-top: rem(80px) !important;
 }

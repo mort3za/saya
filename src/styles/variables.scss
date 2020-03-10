@@ -68,7 +68,7 @@ $grid-breakpoints: map-deep-merge(
 
 $grid-gutter: $spacer * 8;
 $form-grid-gutter: $spacer * 2;
-$grid-columns: 5;
+$grid-columns: 15;
 
 $container-padding-x: rem(24px);
 
@@ -148,8 +148,8 @@ $headings: map-deep-merge(
     ),
     'h2': (
       'size': rem(64px),
-      'weight': 900,
-      'line-height': rem(64px),
+      'weight': 800,
+      'line-height': 1.17,
       'letter-spacing': normal,
       'font-family': $heading-font-family
     ),
@@ -206,7 +206,7 @@ $headings: map-deep-merge(
       'size': rem(22px),
       'weight': 500,
       'letter-spacing': normal,
-      'line-height': 1.1818181,
+      'line-height': 1.19,
       'font-family': $body-font-family
     ),
     'caption': (

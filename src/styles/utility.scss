@@ -9,6 +9,9 @@
 .text-transform-none {
   text-transform: none !important;
 }
+.text-transform-uppercase {
+  text-transform: uppercase !important;
+}
 .user-select-none {
   user-select: none !important;
 }
@@ -50,6 +53,9 @@
 }
 .valign-middle {
   vertical-align: middle !important;
+}
+.has-no-background {
+  background: none !important;
 }
 
 @import './utility-project.scss';

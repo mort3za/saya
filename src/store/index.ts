@@ -5,27 +5,28 @@ import Vuex from 'vuex';
 // import payment from './modules/payment';
 import layout from './modules/layout';
 // import language from './modules/language';
-// import resort from './modules/resort';
+import page from './modules/page';
 // import category from './modules/category';
 import loading from './modules/loading';
 import snackbar from './modules/snackbar';
-// import VuexPersistence from 'vuex-persist';
+import VuexPersistence from 'vuex-persist';
 
-// const vuexLocal = new VuexPersistence({
-//   storage: window.localStorage,
-//   modules: ['auth', 'booking', 'resort', 'language'],
-//   key: 'store'
-// });
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage,
+  // modules: ['auth', 'booking', 'resort', 'language'],
+  modules: ['page'],
+  key: 'store'
+});
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  // plugins: [vuexLocal.plugin],
+  plugins: [vuexLocal.plugin],
   modules: {
     snackbar,
     loading,
     // auth,
-    // resort,
+    page,
     // category,
     // booking,
     // payment,

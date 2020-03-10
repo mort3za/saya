@@ -29,7 +29,8 @@
     &.em-medium {
       color: rgba(map-get($orange, 'lighten-4'), 0.9);
     }
-    &.em-disabled {
+    &.em-disabled,
+    .em-disabled {
       color: rgba(map-get($orange, 'lighten-4'), 0.38);
     }
   }
