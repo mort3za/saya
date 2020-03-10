@@ -191,19 +191,49 @@
               </v-row>
             </v-container>
           </div>
+
+          <banner-text-full :title="'Marketing<br />with AI'"></banner-text-full>
+
+          <div class="background em-medium">
+            <v-container class="py-20">
+              <p>
+                Blobby is our artificial intelligence. We brought Blobby into existence to give small-to-medium sized
+                enterprises access the full power of AI-driven marketing.
+              </p>
+              <p>
+                Blobby is built to aid your business in the long term. We integrate Blobby with your website and online
+                presence so she can learn about what makes your customers tick, and then provide insight on how you can
+                drive your business goals.
+              </p>
+              <p>
+                Blobby has so far demonstrated a huge impact on the ROI of our clients. In our initial pilots, it has
+                increased conversion rates for our clients by over 200%, as well as increasing their overall exposure by
+                over 500%.
+              </p>
+            </v-container>
+          </div>
+
+          <banner-text-full :title="'Get in Touch'"></banner-text-full>
+
+          <div class="background em-medium">
+            <v-container class="py-20">
+              <contact-form></contact-form>
+            </v-container>
+          </div>
         </div>
       </div>
-      <!-- <page-footer></page-footer> -->
+      <page-footer></page-footer>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import FeatureDescriptionIconized from '@/components/FeatureDescriptionIconized.vue';
+import ContactForm from '@/components/ContactForm.vue';
+import PageFooter from '@/components/PageFooter.vue';
 import BannerTextFull from '@/components/BannerTextFull.vue';
 import store from '@/store';
 const slug = 'Home';
-// const PageFooter = () => import(/* webpackMode: "eager" */ '@/components/PageFooter.vue');
 const MarkdownBlock = () => import(/* webpackMode: "eager" */ '@/components/MarkdownBlock.vue');
 
 // https://stagingapi.whynot.earth/api/v0/pages/slug/Saya/Home
@@ -213,8 +243,9 @@ export default {
   components: {
     FeatureDescriptionIconized,
     MarkdownBlock,
-    BannerTextFull
-    // PageFooter
+    BannerTextFull,
+    ContactForm,
+    PageFooter
     // PageHeader
   },
   async beforeRouteEnter(to, from, next) {
