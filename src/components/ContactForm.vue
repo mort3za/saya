@@ -2,7 +2,9 @@
   <v-form name="Contact" method="post" netlify ref="form" action="/thanks" v-model="valid" data-netlify="true">
     <input type="hidden" name="form-name" value="Contact" />
 
-    <v-text-field v-model="name" outlined label="Full Name" name="name" color="light" required dark :rules="nameRules">
+    <p class="mb-6 body-1">We really want to hear from you...</p>
+
+    <v-text-field v-model="name" outlined label="Name" name="name" color="light" required dark :rules="nameRules">
       <v-icon slot="append" color="light">person</v-icon>
     </v-text-field>
 
@@ -10,45 +12,25 @@
       <v-icon slot="append" color="light">email</v-icon>
     </v-text-field>
 
-    <v-text-field
-      v-model="phone"
-      outlined
-      label="Phone Number"
-      name="phone"
-      color="light"
-      required
-      dark
-      :rules="phoneRules"
-    >
-      <v-icon slot="append" color="light">local_phone</v-icon>
-    </v-text-field>
-
     <v-textarea
       outlined
+      class="mb-6"
+      rows="5"
       hide-details
       dark
       v-model="message"
       color="light"
       name="message"
-      label="Write message here..."
-      height="128px"
+      label="Message"
       no-resize
     >
     </v-textarea>
 
-    <v-btn
-      color="primary"
-      dark
-      block
-      large
-      depressed
-      style="padding:0; margin-top:30px; margin-bottom:25px; box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); border-radius: 4px; text-transform:capitalize; font-size: 16px; height:74px;"
-      type="submit"
-      class="dark--text"
-      :disabled="!valid"
-    >
-      Send<v-icon>keyboard_arrow_right</v-icon>
-    </v-btn>
+    <div class="text-center">
+      <v-btn class="mx-auto px-10" height="40" color="primary" dark type="submit" :disabled="!valid">
+        Send Message
+      </v-btn>
+    </div>
   </v-form>
 </template>
 

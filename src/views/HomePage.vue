@@ -195,7 +195,7 @@
           <banner-text-full :title="'Marketing<br />with AI'"></banner-text-full>
 
           <div class="background em-medium">
-            <v-container class="py-20">
+            <v-container class="py-20 body-1">
               <p>
                 Blobby is our artificial intelligence. We brought Blobby into existence to give small-to-medium sized
                 enterprises access the full power of AI-driven marketing.
