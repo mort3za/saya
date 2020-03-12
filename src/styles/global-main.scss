@@ -36,3 +36,13 @@ input:-webkit-autofill {
   -webkit-animation-name: autofill;
   -webkit-animation-fill-mode: both;
 }
+
+// vuetify overrides
+.v-application {
+  .container {
+    @media #{map-get($display-breakpoints, 'sm-and-down')} {
+      padding-left: rem(24px);
+      padding-right: rem(24px);
+    }
+  }
+}

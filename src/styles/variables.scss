@@ -139,31 +139,35 @@ $btn-letter-spacing: 0;
 $headings: ();
 $headings: map-deep-merge(
   (
+    // .display-4
     'h1': (
-      'size': rem(232px),
-      'weight': bold,
-      'line-height': 0.862068967,
-      'letter-spacing': normal,
-      'font-family': $heading-font-family
-    ),
-    'h2': (
-      'size': rem(64px),
-      'weight': 800,
-      'line-height': 1.17,
-      'letter-spacing': normal,
-      'font-family': $heading-font-family
-    ),
-    'h3': (
-      'size': rem(20px),
-      'weight': bold,
-      'line-height': 1.5,
-      'letter-spacing': normal,
-      'font-family': $heading-font-family
-    ),
-    'h4': (
-      'size': 2.125rem,
+      'size': rem(112px),
       'weight': 400,
-      'line-height': 2.5rem,
+      'line-height': rem(112),
+      'letter-spacing': normal,
+      'font-family': $heading-font-family
+    ),
+    // .display-3
+    'h2': (
+      'size': rem(56px),
+      'weight': 400,
+      'line-height': rem(48),
+      'letter-spacing': normal,
+      'font-family': $heading-font-family
+    ),
+    // .display-2
+    'h3': (
+      'size': rem(45px),
+      'weight': 400,
+      'line-height': rem(40),
+      'letter-spacing': normal,
+      'font-family': $heading-font-family
+    ),
+    // .display-1
+    'h4': (
+      'size': rem(34),
+      'weight': 400,
+      'line-height': 40,
       'letter-spacing': normal,
       'font-family': $heading-font-family
     ),

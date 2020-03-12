@@ -3,7 +3,7 @@
     <v-container class="py-9">
       <v-row no-gutters="">
         <v-col cols="8">
-          <h2 class="display-3 mb-0 text-transform-uppercase" v-html="title"></h2>
+          <h2 class="mb-0 text-transform-uppercase typography-h2" v-html="title"></h2>
         </v-col>
       </v-row>
     </v-container>

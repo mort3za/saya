@@ -11,3 +11,54 @@ h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
+
+.v-application {
+  .typography-h1 {
+    font-size: rem(232px);
+    font-weight: 700;
+    line-height: 0.862068967;
+    letter-spacing: normal;
+    font-family: $heading-font-family;
+  }
+  .typography-h2 {
+    font-size: rem(64px);
+    font-weight: 800;
+    line-height: 1.17;
+    letter-spacing: normal;
+    font-family: $heading-font-family;
+  }
+  .typography-h3 {
+    font-size: rem(20px);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: normal;
+    font-family: $heading-font-family;
+  }
+  // .body-2,
+  .typography-menu {
+    font-size: rem(18px) !important;
+    font-weight: map-get($font-weights, 'medium') !important;
+    letter-spacing: 0.0178571429em;
+    line-height: 1.25rem;
+    font-family: $body-font-family;
+  }
+  @media #{map-get($display-breakpoints, 'sm-and-down')} {
+    .typography-h1 {
+      font-size: rem(64px) !important;
+      font-weight: map-get($font-weights, 'bold') !important;
+    }
+    .typography-h2 {
+      font-size: rem(22px) !important;
+      font-weight: map-get($font-weights, 'bold') !important;
+    }
+    .body-1 {
+      font-size: rem(18px) !important;
+      font-weight: map-get($font-weights, 'medium') !important;
+    }
+    .body-2,
+    .typography-menu {
+      font-size: rem(18px) !important;
+      font-weight: map-get($font-weights, 'medium') !important;
+    }
+  }
+}

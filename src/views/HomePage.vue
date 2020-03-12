@@ -6,7 +6,7 @@
         <div class="page-home--content">
           <div class="primary em-high">
             <v-container class="pt-30 pb-10">
-              <h1 class="pb-10 mb-0" :class="[$vuetify.breakpoint.smAndUp ? 'display-4' : 'display-3']">
+              <h1 class="pb-10 mb-0 typography-h1">
                 {{ page.title }}
               </h1>
               <p class="body-1 py-8 mb-0">
