@@ -4,7 +4,7 @@
     <div class="page">
       <div class="page-content">
         <div class="page-home--content">
-          <div class="primary em-high">
+          <div data-aos="fade-up" class="primary em-high">
             <v-container class="pt-30 pb-10">
               <h1 class="pb-10 mb-0 typography-h1">
                 {{ page.title }}
@@ -16,8 +16,11 @@
               </p>
             </v-container>
           </div>
+
           <div>
             <v-img
+              data-aos="fade-up"
+              eager
               :src="
                 transformCloudinaryUrl(
                   'https://res.cloudinary.com/whynotearth/image/upload/v1583765719/Saya/home-hero_xzzuff.png',
@@ -27,7 +30,7 @@
             ></v-img>
           </div>
           <banner-text-full :title="'Built for Vietnam'"></banner-text-full>
-          <div class="background em-medium">
+          <div data-aos="fade-up" class="background em-medium">
             <v-container class="py-20">
               <p class="body-1 mb-20">
                 Saya was built to serve the Vietnamese hotel industry as a long-term partner. Saya is fully multilingual
@@ -35,6 +38,7 @@
                 Vietnamese bank accounts right out of the box - and with only 10% commission.
               </p>
               <v-img
+                eager
                 :src="
                   transformCloudinaryUrl(
                     'https://res.cloudinary.com/whynotearth/image/upload/v1583766685/Saya/home-speaking_dujprx.png',
@@ -45,7 +49,7 @@
             </v-container>
           </div>
           <banner-text-full :title="'Take Control of Your Brand'"></banner-text-full>
-          <div class="background em-medium">
+          <div data-aos="fade-up" class="background em-medium">
             <v-container class="py-20">
               <p class="body-1 mb-20">
                 Saya includes a fully personalized web presence for each partner from the ground up. Breaking away from
@@ -54,6 +58,7 @@
                 that retains ownership of your customers.
               </p>
               <v-img
+                eager
                 :src="
                   transformCloudinaryUrl(
                     'https://res.cloudinary.com/whynotearth/image/upload/v1583768734/Saya/home-personalization_uwcduc.png',
@@ -64,7 +69,7 @@
             </v-container>
           </div>
           <banner-text-full :title="'Boost Your Presence with AI-Driven Marketing'"></banner-text-full>
-          <div class="background em-medium">
+          <div data-aos="fade-up" class="background em-medium">
             <v-container class="py-20">
               <p class="body-1 mb-6">
                 Saya is designed for full integration with Blobby, WNE’s open-source marketing AI. Blobby allows
@@ -73,6 +78,7 @@
               </p>
               <!-- <h3 class="mb-6 text-transform-uppercase">Our Live Performance</h3> -->
               <v-img
+                eager
                 max-height="336"
                 contain=""
                 :src="
@@ -95,7 +101,7 @@
           </div>
           <banner-text-full title="Marketing"></banner-text-full>
           <!-- features -->
-          <div class="background em-medium">
+          <div data-aos="fade-up" class="background em-medium">
             <v-container class="py-20">
               <v-row>
                 <v-col cols="4" v-for="feature in features1" :key="feature.id" class="py-10">
@@ -107,7 +113,7 @@
 
           <banner-text-full :title="'Hotel Management'"></banner-text-full>
           <!-- features -->
-          <div class="background em-medium">
+          <div data-aos="fade-up" class="background em-medium">
             <v-container class="py-20">
               <v-row>
                 <v-col cols="4" v-for="feature in features2" :key="feature.id" class="py-10">
@@ -121,7 +127,7 @@
           <banner-text-full :title="'Who We Are'"></banner-text-full>
           <div class="background em-medium">
             <v-container class="py-20">
-              <div class="body-1 mb-20">
+              <div data-aos="fade-up" class="body-1 mb-20">
                 <p>
                   WNE are a team based in southeast asia who make best-in-class enterprise level software for
                   medium-to-large companies that unifies all of their marketing, sales processes, and online branding.
@@ -133,9 +139,10 @@
               </div>
 
               <!-- gallery -->
-              <v-row>
+              <v-row data-aos="fade-up">
                 <v-col>
                   <v-img
+                    eager
                     contain
                     :src="
                       transformCloudinaryUrl(
@@ -149,9 +156,10 @@
               </v-row>
 
               <!-- row 2 -->
-              <v-row>
+              <v-row data-aos="fade-up">
                 <v-col cols="6">
                   <v-img
+                    eager
                     contain
                     :src="
                       transformCloudinaryUrl(
@@ -164,6 +172,7 @@
                 </v-col>
                 <v-col cols="6">
                   <v-img
+                    eager
                     contain
                     :src="
                       transformCloudinaryUrl(
@@ -175,9 +184,10 @@
                   ></v-img>
                 </v-col>
               </v-row>
-              <v-row>
+              <v-row data-aos="fade-up">
                 <v-col>
                   <v-img
+                    eager
                     contain
                     :src="
                       transformCloudinaryUrl(
@@ -194,7 +204,7 @@
 
           <banner-text-full :title="'Marketing<br />with AI'"></banner-text-full>
 
-          <div class="background em-medium">
+          <div data-aos="fade-up" class="background em-medium">
             <v-container class="py-20 body-1">
               <p>
                 Blobby is our artificial intelligence. We brought Blobby into existence to give small-to-medium sized
@@ -215,7 +225,7 @@
 
           <banner-text-full :title="'Get in Touch'"></banner-text-full>
 
-          <div class="background em-medium">
+          <div data-aos="fade-up" class="background em-medium">
             <v-container class="py-20">
               <contact-form></contact-form>
             </v-container>
@@ -235,11 +245,13 @@ import BannerTextFull from '@/components/BannerTextFull.vue';
 import store from '@/store';
 const slug = 'Home';
 const MarkdownBlock = () => import(/* webpackMode: "eager" */ '@/components/MarkdownBlock.vue');
+import aosAnimations from '@/mixins/aos-animations';
 
 // https://stagingapi.whynot.earth/api/v0/pages/slug/Saya/Home
 
 export default {
   name: 'home-page',
+  mixins: [aosAnimations],
   components: {
     FeatureDescriptionIconized,
     MarkdownBlock,
@@ -327,4 +339,3 @@ export default {
 <style lang="scss">
 @import '@/styles/utility.scss';
 </style>
-<style lang="scss" scoped></style>

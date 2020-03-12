@@ -16,6 +16,7 @@
     "pwa-asset-generator-splash": "pwa-asset-generator public/img/splash-screen.png public/img/icons/ --background '#ea5455' --single-quotes --index public/index.html --scrape false --path '<%= BASE_URL %>' --splash-only"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "axios": "0.19.2",
     "bootstrap": "4.4.1",
     "core-js": "3.6.4",
@@ -35,7 +36,6 @@
     "vuex-persist": "2.2.0"
   },
   "devDependencies": {
-    "pwa-asset-generator": "^2.2.2",
     "@types/lodash-es": "4.17.3",
     "@types/node": "^13.7.7",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
@@ -56,6 +56,7 @@
     "esm": "3.2.25",
     "postcss-easing-gradients": "3.0.1",
     "prettier": "^1.19.1",
+    "pwa-asset-generator": "^2.2.2",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
     "sass-rem": "2.0.1",

@@ -1,6 +1,6 @@
 <template>
   <div class="primary em-high">
-    <v-container class="py-9">
+    <v-container class="py-9" data-aos="fade-up">
       <v-row no-gutters="">
         <v-col cols="8">
           <h2 class="mb-0 text-transform-uppercase typography-h2" v-html="title"></h2>
@@ -16,7 +16,3 @@ export default Vue.extend({
   props: ['title']
 });
 </script>
-
-<style lang="scss" scoped>
-//
-</style>
