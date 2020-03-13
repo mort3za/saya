@@ -5,19 +5,17 @@
       <div class="page-content">
         <div class="page-home--content">
           <div data-aos="fade-up" class="primary em-high">
-            <v-container class="pt-30 pb-10">
-              <h1 class="pb-10 mb-0 typography-h1">
+            <v-container class="pb-10" :class="[$vuetify.breakpoint.smAndDown ? 'pt-10' : 'pt-20']">
+              <h1 class="mb-10 typography-h1" :class="[$vuetify.breakpoint.smAndDown ? 'py-2' : 'py-10']">
                 {{ page.title }}
               </h1>
-              <p class="body-1 py-8 mb-0">
+              <div class="body-1 mb-0">
                 <markdown-block :content="page.description"></markdown-block>
-                Saya is the premier hotel software suite for Vietnam. Saya combines an end-to-end hotel management
-                system with an AI-powered marketing and customer data platform designed to maximise your bookings.
-              </p>
+              </div>
             </v-container>
           </div>
 
-          <div>
+          <div class="primary">
             <v-img
               data-aos="fade-up"
               eager

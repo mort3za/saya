@@ -17,10 +17,10 @@ export default {
       // demo: https://michalsnik.github.io/aos/
       AOS[method]({
         once: false,
-        delay: 100,
+        delay: 0,
         easing: 'fade-up',
         anchorPlacement: 'top-bottom',
-        duration: 800
+        duration: 700
         // startEvent: 'DOMContentLoaded'
       });
     }
