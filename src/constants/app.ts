@@ -1,7 +1,7 @@
 import { EmailAddress } from '@/types';
 
 export const companyId = process.env.VUE_APP_COMPANY_ID;
-export const appTitle = process.env.VUE_APP_PROJECT_NAME;
+export const appTitle = process.env.VUE_APP_PROJECT_NAME_SHORT;
 export const appTitleTemplate = '%s | ' + appTitle;
 export const companySlug = process.env.VUE_APP_COMPANY_SLUG;
 export const emailAPIBase = 'https://express-502501.netlify.com/.netlify/functions/server';

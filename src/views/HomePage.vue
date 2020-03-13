@@ -244,6 +244,7 @@ import store from '@/store';
 const slug = 'Home';
 const MarkdownBlock = () => import(/* webpackMode: "eager" */ '@/components/MarkdownBlock.vue');
 import aosAnimations from '@/mixins/aos-animations';
+import { getFormattedMetaTitle } from '../helpers';
 
 // https://stagingapi.whynot.earth/api/v0/pages/slug/Saya/Home
 
@@ -264,6 +265,25 @@ export default {
     await store.dispatch('page/getItemBySlug', slug);
 
     next();
+  },
+  metaInfo() {
+    return {
+      title: getFormattedMetaTitle((this as any).page.title, { titleCase: false }),
+      meta: [
+        {
+          vmid: 'description',
+          name: 'description',
+          content: (this as any).page.custom.description
+        }
+      ],
+      script: [
+        {
+          vmid: 'jsonld',
+          type: 'application/ld+json',
+          json: (this as any).page.custom
+        }
+      ]
+    };
   },
   computed: {
     page() {
