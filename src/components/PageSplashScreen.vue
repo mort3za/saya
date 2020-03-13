@@ -9,6 +9,7 @@
             class="logo"
             contain
             max-width="95vw"
+            max-height="80vh"
             :src="
               transformCloudinaryUrl(
                 'https://res.cloudinary.com/whynotearth/image/upload/v1583918123/Saya/splash-screen-onloading_zgtap9.png',

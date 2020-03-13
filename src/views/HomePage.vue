@@ -101,11 +101,11 @@
           </div>
           <banner-text-full title="Marketing"></banner-text-full>
           <!-- features -->
-          <div data-aos="fade-up" class="background em-medium">
+          <div class="background em-medium">
             <v-container class="py-20">
               <v-row>
-                <v-col cols="4" v-for="feature in features1" :key="feature.id" class="py-10">
-                  <feature-description-iconized :model="feature"></feature-description-iconized>
+                <v-col cols="12" sm="4" v-for="feature in features1" :key="feature.id" class="py-10">
+                  <feature-description-iconized data-aos="fade-up" :model="feature"></feature-description-iconized>
                 </v-col>
               </v-row>
             </v-container>
@@ -113,11 +113,11 @@
 
           <banner-text-full :title="'Hotel Management'"></banner-text-full>
           <!-- features -->
-          <div data-aos="fade-up" class="background em-medium">
+          <div class="background em-medium">
             <v-container class="py-20">
               <v-row>
-                <v-col cols="4" v-for="feature in features2" :key="feature.id" class="py-10">
-                  <feature-description-iconized :model="feature"></feature-description-iconized>
+                <v-col cols="12" sm="4" v-for="feature in features2" :key="feature.id" class="py-10">
+                  <feature-description-iconized data-aos="fade-up" :model="feature"></feature-description-iconized>
                 </v-col>
               </v-row>
             </v-container>

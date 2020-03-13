@@ -12,53 +12,53 @@ h6 {
   margin-bottom: 0.5rem;
 }
 
-.v-application {
+body .v-application {
   .typography-h1 {
-    font-size: rem(232px);
+    font-size: rem(232px) !important;
     font-weight: 700;
     line-height: 0.862068967;
-    letter-spacing: normal;
-    font-family: $heading-font-family;
+    letter-spacing: normal !important;
+    font-family: $heading-font-family !important;
   }
   .typography-h2 {
-    font-size: rem(64px);
+    font-size: rem(64px) !important;
     font-weight: 800;
     line-height: 1.17;
-    letter-spacing: normal;
-    font-family: $heading-font-family;
+    letter-spacing: normal !important;
+    font-family: $heading-font-family !important;
   }
   .typography-h3 {
-    font-size: rem(20px);
+    font-size: rem(20px) !important;
     font-weight: 700;
     line-height: 1.5;
-    letter-spacing: normal;
-    font-family: $heading-font-family;
+    letter-spacing: normal !important;
+    font-family: $heading-font-family !important;
   }
   // .body-2,
   .typography-menu {
     font-size: rem(18px) !important;
-    font-weight: map-get($font-weights, 'medium') !important;
-    letter-spacing: 0.0178571429em;
+    font-weight: map-get($font-weights, 'medium');
+    letter-spacing: 0.0178571429em !important;
     line-height: 1.25rem;
     font-family: $body-font-family;
   }
   @media #{map-get($display-breakpoints, 'sm-and-down')} {
     .typography-h1 {
       font-size: rem(64px) !important;
-      font-weight: map-get($font-weights, 'bold') !important;
+      font-weight: map-get($font-weights, 'bold');
     }
     .typography-h2 {
       font-size: rem(22px) !important;
-      font-weight: map-get($font-weights, 'bold') !important;
+      font-weight: map-get($font-weights, 'bold');
     }
     .body-1 {
       font-size: rem(18px) !important;
-      font-weight: map-get($font-weights, 'medium') !important;
+      font-weight: map-get($font-weights, 'medium');
     }
     .body-2,
     .typography-menu {
       font-size: rem(18px) !important;
-      font-weight: map-get($font-weights, 'medium') !important;
+      font-weight: map-get($font-weights, 'medium');
     }
   }
 }

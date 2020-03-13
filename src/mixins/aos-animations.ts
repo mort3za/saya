@@ -13,15 +13,14 @@ export default {
   },
   methods: {
     aos(method) {
-      console.log('method', method);
-
       // documentation: https://github.com/michalsnik/aos
       // demo: https://michalsnik.github.io/aos/
       AOS[method]({
         once: false,
         delay: 100,
         easing: 'fade-up',
-        anchorPlacement: 'top-bottom'
+        anchorPlacement: 'top-bottom',
+        duration: 800
         // startEvent: 'DOMContentLoaded'
       });
     }
