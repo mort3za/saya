@@ -73,9 +73,11 @@ export default Vue.extend({
   methods: {
     addPageClass() {
       document.body.classList.add('overflow-hidden');
+      document.documentElement.classList.add('overflow-hidden');
     },
     removePageClass() {
       document.body.classList.remove('overflow-hidden');
+      document.documentElement.classList.remove('overflow-hidden');
     },
     timers() {
       const loadingTimer = setTimeout(() => {
