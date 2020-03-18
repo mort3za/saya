@@ -1,227 +1,16 @@
 <template>
   <div>
-    <!-- <page-header></page-header> -->
     <div class="page">
       <div class="page-content">
         <div class="page-home--content">
-          <div data-aos="fade-up" class="primary em-high">
-            <v-container class="pb-10" :class="[$vuetify.breakpoint.smAndDown ? 'pt-10' : 'pt-20']">
-              <h1 class="mb-10 typography-h1" :class="[$vuetify.breakpoint.smAndDown ? 'py-2' : 'py-10']">
-                {{ page.title }}
-              </h1>
-              <div class="body-1 mb-0">
-                <markdown-block :content="page.description"></markdown-block>
-              </div>
-            </v-container>
-          </div>
-
-          <div class="primary">
-            <v-img
-              data-aos="fade-up"
-              eager
-              :src="
-                transformCloudinaryUrl(
-                  'https://res.cloudinary.com/whynotearth/image/upload/v1583765719/Saya/home-hero_xzzuff.png',
-                  'f_auto'
-                )
-              "
-            ></v-img>
-          </div>
-          <banner-text-full :title="'Built for Vietnam'"></banner-text-full>
-          <div data-aos="fade-up" class="background em-medium">
-            <v-container class="py-20">
-              <p class="body-1 mb-20">
-                Saya was built to serve the Vietnamese hotel industry as a long-term partner. Saya is fully multilingual
-                between Vietnamese, Chinese, and English, and can handle payments from Visa, Amex, Alipay, and
-                Vietnamese bank accounts right out of the box - and with only 10% commission.
-              </p>
-              <v-img
-                eager
-                :src="
-                  transformCloudinaryUrl(
-                    'https://res.cloudinary.com/whynotearth/image/upload/v1583766685/Saya/home-speaking_dujprx.png',
-                    'f_auto'
-                  )
-                "
-              ></v-img>
-            </v-container>
-          </div>
-          <banner-text-full :title="'Take Control of Your Brand'"></banner-text-full>
-          <div data-aos="fade-up" class="background em-medium">
-            <v-container class="py-20">
-              <p class="body-1 mb-20">
-                Saya includes a fully personalized web presence for each partner from the ground up. Breaking away from
-                traditional website building platforms helps your brand maintain complete control, while staying ahead
-                of your competitors in innovation. Reduce your dependency on the online hotel giants with a web presence
-                that retains ownership of your customers.
-              </p>
-              <v-img
-                eager
-                :src="
-                  transformCloudinaryUrl(
-                    'https://res.cloudinary.com/whynotearth/image/upload/v1583768734/Saya/home-personalization_uwcduc.png',
-                    'f_auto'
-                  )
-                "
-              ></v-img>
-            </v-container>
-          </div>
-          <banner-text-full :title="'Boost Your Presence with AI-Driven Marketing'"></banner-text-full>
-          <div data-aos="fade-up" class="background em-medium">
-            <v-container class="py-20">
-              <p class="body-1 mb-6">
-                Saya is designed for full integration with Blobby, WNE’s open-source marketing AI. Blobby allows
-                small-to-medium sized enterprises to access the power of bespoke AI-powered marketing campaigns which
-                can boost your conversions by up to 200%.
-              </p>
-              <!-- <h3 class="mb-6 text-transform-uppercase">Our Live Performance</h3> -->
-              <v-img
-                eager
-                max-height="336"
-                contain=""
-                :src="
-                  transformCloudinaryUrl(
-                    'https://res.cloudinary.com/whynotearth/image/upload/v1583769164/Saya/home-chart_ocobah.png',
-                    'f_auto'
-                  )
-                "
-              ></v-img>
-              <div class="background em-high py-6">
-                <h3 class="mb-0 text-transform-uppercase text-center">See what we can do for you</h3>
-              </div>
-              <div class="d-flex justify-center mb-6">
-                <v-btn class="primary em-high">Sync Google Analytics</v-btn>
-              </div>
-              <p class="text-center mb-0 em-disabled">
-                Syncing lets Saya read your Google analytics data, and show where improvements could be made
-              </p>
-            </v-container>
-          </div>
-          <banner-text-full title="Marketing"></banner-text-full>
-          <!-- features -->
-          <div class="background em-medium">
-            <v-container class="py-20">
-              <v-row>
-                <v-col cols="12" sm="4" v-for="feature in features1" :key="feature.id" class="py-10">
-                  <feature-description-iconized data-aos="fade-up" :model="feature"></feature-description-iconized>
-                </v-col>
-              </v-row>
-            </v-container>
-          </div>
-
-          <banner-text-full :title="'Hotel Management'"></banner-text-full>
-          <!-- features -->
-          <div class="background em-medium">
-            <v-container class="py-20">
-              <v-row>
-                <v-col cols="12" sm="4" v-for="feature in features2" :key="feature.id" class="py-10">
-                  <feature-description-iconized data-aos="fade-up" :model="feature"></feature-description-iconized>
-                </v-col>
-              </v-row>
-            </v-container>
-          </div>
-
-          <!-- who we are -->
-          <banner-text-full :title="'Who We Are'"></banner-text-full>
-          <div class="background em-medium">
-            <v-container class="py-20">
-              <div data-aos="fade-up" class="body-1 mb-20">
-                <p>
-                  WNE are a team based in southeast asia who make best-in-class enterprise level software for
-                  medium-to-large companies that unifies all of their marketing, sales processes, and online branding.
-                </p>
-                <p>
-                  Sayas clients currently include Volkswagen, Browtricks, and the vKirirom Pine Resort. Collectively,
-                  our team have worked with Google, Amazon, Airbnb, and Goldman Sachs.
-                </p>
-              </div>
-
-              <!-- gallery -->
-              <v-row data-aos="fade-up">
-                <v-col>
-                  <v-img
-                    eager
-                    contain
-                    :src="
-                      transformCloudinaryUrl(
-                        'https://res.cloudinary.com/whynotearth/image/upload/v1583834583/Saya/portfolio-1_hcgzej.png',
-                        'f_auto'
-                      )
-                    "
-                    alt="vKirirom Pine Resort"
-                  ></v-img>
-                </v-col>
-              </v-row>
-
-              <!-- row 2 -->
-              <v-row data-aos="fade-up">
-                <v-col cols="6">
-                  <v-img
-                    eager
-                    contain
-                    :src="
-                      transformCloudinaryUrl(
-                        'https://res.cloudinary.com/whynotearth/image/upload/v1583834055/Saya/portfolio-2_qkmij6.png',
-                        'f_auto'
-                      )
-                    "
-                    alt=""
-                  ></v-img>
-                </v-col>
-                <v-col cols="6">
-                  <v-img
-                    eager
-                    contain
-                    :src="
-                      transformCloudinaryUrl(
-                        'https://res.cloudinary.com/whynotearth/image/upload/v1583836039/Saya/portfolio-3_ebcigy.png',
-                        'f_auto'
-                      )
-                    "
-                    alt=""
-                  ></v-img>
-                </v-col>
-              </v-row>
-              <v-row data-aos="fade-up">
-                <v-col>
-                  <v-img
-                    eager
-                    contain
-                    :src="
-                      transformCloudinaryUrl(
-                        'https://res.cloudinary.com/whynotearth/image/upload/v1583834077/Saya/portfolio-4_w7lrpc.png',
-                        'f_auto'
-                      )
-                    "
-                    alt=""
-                  ></v-img>
-                </v-col>
-              </v-row>
-            </v-container>
-          </div>
-
-          <banner-text-full :title="'Marketing<br />with AI'"></banner-text-full>
-
-          <div data-aos="fade-up" class="background em-medium">
-            <v-container class="py-20 body-1">
-              <p>
-                Blobby is our artificial intelligence. We brought Blobby into existence to give small-to-medium sized
-                enterprises access the full power of AI-driven marketing.
-              </p>
-              <p>
-                Blobby is built to aid your business in the long term. We integrate Blobby with your website and online
-                presence so she can learn about what makes your customers tick, and then provide insight on how you can
-                drive your business goals.
-              </p>
-              <p>
-                Blobby has so far demonstrated a huge impact on the ROI of our clients. In our initial pilots, it has
-                increased conversion rates for our clients by over 200%, as well as increasing their overall exposure by
-                over 500%.
-              </p>
-            </v-container>
-          </div>
-
-          <banner-text-full :title="'Get in Touch'"></banner-text-full>
+          <!-- section 1 -->
+          <landing-component-container
+            v-for="component in filter(sortBy(landing.components, 'order'), ['section', 1])"
+            :key="component.id"
+            :component="component"
+          >
+            <landing-component-loader :type="component.type" :model="component.model"></landing-component-loader>
+          </landing-component-container>
 
           <div data-aos="fade-up" class="background em-medium">
             <v-container class="py-20">
@@ -236,33 +25,30 @@
 </template>
 
 <script lang="ts">
-import FeatureDescriptionIconized from '@/components/FeatureDescriptionIconized.vue';
 import ContactForm from '@/components/ContactForm.vue';
 import PageFooter from '@/components/PageFooter.vue';
-import BannerTextFull from '@/components/BannerTextFull.vue';
+import LandingComponentContainer from '@/components/LandingComponentContainer.vue';
+import LandingComponentLoader from '@/components/LandingComponentLoader.vue';
 import store from '@/store';
-const slug = 'Home';
-const MarkdownBlock = () => import(/* webpackMode: "eager" */ '@/components/MarkdownBlock.vue');
 import aosAnimations from '@/mixins/aos-animations';
 import { getFormattedMetaTitle } from '../helpers';
-
-// https://stagingapi.whynot.earth/api/v0/pages/slug/Saya/Home
+import { sortBy, filter } from 'lodash-es';
+const slug = 'Home';
 
 export default {
   name: 'home-page',
   mixins: [aosAnimations],
   components: {
-    FeatureDescriptionIconized,
-    MarkdownBlock,
-    BannerTextFull,
+    LandingComponentLoader,
     ContactForm,
-    PageFooter
-    // PageHeader
+    PageFooter,
+    LandingComponentContainer
   },
   async beforeRouteEnter(to, from, next) {
     store.commit('loading/updateIsSplashScreenVisible', true);
 
     await store.dispatch('page/getItemBySlug', slug);
+    await store.dispatch('landing/getItemBySlug', slug);
 
     next();
   },
@@ -288,69 +74,15 @@ export default {
   computed: {
     page() {
       return store.getters['page/itemBySlug'](slug);
+    },
+    landing() {
+      return store.getters['landing/itemBySlug'](slug);
     }
   },
-  data: () => ({
-    features1: [
-      {
-        id: 1,
-        title: 'Web Design',
-        description:
-          'Saya’s UX consultancy team will build a completely bespoke, personalized, and best-in-class web presence for your hotel.',
-        icon: 'computer'
-      },
-      {
-        id: 2,
-        title: 'Full Marketing Analytics',
-        description:
-          'You retain full visibility and control of all marketing channels through Saya, including detailed analysis of your ROI.',
-        icon: 'stats'
-      },
-      {
-        id: 3,
-        title: 'Social Media Management',
-        description:
-          'Saya’s social media team will be happy to take over your brand management, both within Vietnam and worldwide, with specialists in both Western and Chinese markets available.',
-        icon: 'group'
-      },
-      {
-        id: 4,
-        title: 'Outbound Marketing',
-        description:
-          'Saya includes email and text campaign automation features, including pre-and-post arrival campaigns.',
-        icon: 'email'
-      },
-      {
-        id: 5,
-        title: 'Ai-Driven Marketing ',
-        description:
-          'Integration with Blobby, Saya’s marketing AI, allows for long-term optimization of your marketing and web-presence to drive bookings. We’ve seen Blobby triple conversions in less than a year and a half.',
-        icon: 'ai'
-      }
-    ],
-    features2: [
-      {
-        id: 1,
-        title: 'Booking Engine',
-        description: 'Saya includes a robust and secure booking system.',
-        icon: 'booking'
-      },
-      {
-        id: 2,
-        title: 'Payment Processing',
-        description:
-          'Sayas in-house payments processing engine gives you and your clients access to the most fast and secure hotel payments processor in Vietnam.',
-        icon: 'payment'
-      },
-      {
-        id: 3,
-        title: 'Property Management',
-        description:
-          'Including management of housekeeping, incidentals, food + beverages, and booking integration as required.',
-        icon: 'food'
-      }
-    ]
-  })
+  methods: {
+    sortBy,
+    filter
+  }
 };
 </script>
 

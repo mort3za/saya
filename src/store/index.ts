@@ -9,6 +9,7 @@ import page from './modules/page';
 // import category from './modules/category';
 import loading from './modules/loading';
 import snackbar from './modules/snackbar';
+import landing from './modules/landing';
 import VuexPersistence from 'vuex-persist';
 
 const vuexLocal = new VuexPersistence({
@@ -30,7 +31,8 @@ export default new Vuex.Store({
     // category,
     // booking,
     // payment,
-    layout
+    layout,
+    landing
     // language
   }
 });
