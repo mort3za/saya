@@ -47,8 +47,10 @@ export default {
   async beforeRouteEnter(to, from, next) {
     store.commit('loading/updateIsSplashScreenVisible', true);
 
-    await store.dispatch('page/getItemBySlug', slug);
-    await store.dispatch('landing/getItemBySlug', slug);
+    const promise1 = store.dispatch('page/getItemBySlug', slug);
+    const promise2 = store.dispatch('landing/getItemBySlug', slug);
+
+    await Promise.all([promise1, promise2]);
 
     next();
   },
