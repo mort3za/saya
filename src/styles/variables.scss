@@ -52,37 +52,11 @@ $font-weights: map-deep-merge(
 // --------------------------
 $spacer: 4px;
 
-$grid-breakpoints: ();
-$grid-breakpoints: map-deep-merge(
-  (
-    'xxs': 0,
-    'xs': 375,
-    'sm': 600px,
-    'md': 960px,
-    'lg': 1280px - 16px,
-    'xl': 1920px - 16px,
-    'xxl': 2560px - 16px
-  ),
-  $grid-breakpoints
-);
-
 $grid-gutter: $spacer * 6;
 $form-grid-gutter: $spacer * 2;
 $grid-columns: 12;
 
 $container-padding-x: rem(12px);
-
-// $grid-gutters: ();
-// $grid-gutters: map-deep-merge(
-//   (
-//     'xs': $grid-gutter / 12,
-//     'sm': $grid-gutter / 6,
-//     'md': $grid-gutter / 3,
-//     'lg': $grid-gutter * 2/3,
-//     'xl': $grid-gutter
-//   ),
-//   $grid-gutters
-// );
 
 $container-max-widths: ();
 $container-max-widths: map-deep-merge(
@@ -92,33 +66,6 @@ $container-max-widths: map-deep-merge(
     'xl': rem(900px)
   ),
   $container-max-widths
-);
-
-$display-breakpoints: ();
-// prettier-ignore
-$display-breakpoints: map-deep-merge(
-  (
-    'print-only': 'only print',
-    'screen-only': 'only screen',
-    // customized:
-    'xxs-only': 'only screen and (max-width: #{map-get($grid-breakpoints, 'xs') - 1})',
-    // customized:
-    'xs-only': 'only screen and (min-width: #{map-get($grid-breakpoints, 'xs')}) and (max-width: #{map-get($grid-breakpoints, 'sm') - 1})',
-    'xs-and-down': 'only screen and (max-width: #{map-get($grid-breakpoints, 'sm') - 1})',
-    'xs-and-up': 'only screen and (min-width: #{map-get($grid-breakpoints, 'xs')})',
-    // original:
-    'sm-only': 'only screen and (min-width: #{map-get($grid-breakpoints, 'sm')}) and (max-width: #{map-get($grid-breakpoints, 'md') - 1})',
-    'sm-and-down': 'only screen and (max-width: #{map-get($grid-breakpoints, 'md') - 1})',
-    'sm-and-up': 'only screen and (min-width: #{map-get($grid-breakpoints, 'sm')})',
-    'md-only': 'only screen and (min-width: #{map-get($grid-breakpoints, 'md')}) and (max-width: #{map-get($grid-breakpoints, 'lg') - 1})',
-    'md-and-down': 'only screen and (max-width: #{map-get($grid-breakpoints, 'lg') - 1})',
-    'md-and-up': 'only screen and (min-width: #{map-get($grid-breakpoints, 'md')})',
-    'lg-only': 'only screen and (min-width: #{map-get($grid-breakpoints, 'lg')}) and (max-width: #{map-get($grid-breakpoints, 'xl') - 1})',
-    'lg-and-down': 'only screen and (max-width: #{map-get($grid-breakpoints, 'xl') - 1})',
-    'lg-and-up': 'only screen and (min-width: #{map-get($grid-breakpoints, 'lg')})',
-    'xl-only': 'only screen and (min-width: #{map-get($grid-breakpoints, 'xl')})'
-  ),
-  $display-breakpoints
 );
 
 $spacers: ();
@@ -239,6 +186,7 @@ $border-radius-root: 4px;
 // --------------------------
 :export {
   zindexSplashScreen: $zindex-splash-screen;
+  spacer: $spacer;
 }
 
 // --------------------------------------------------------

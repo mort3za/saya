@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column" :data-aos="model.animation">
     <div class="d-flex align-center mb-8">
       <div class="mr-6">
         <v-img height="48" width="48" :src="`img/svg/${model.icon}.svg`" contain></v-img>
@@ -13,7 +13,7 @@
 <script lang="ts">
 import Vue from 'vue';
 export default Vue.extend({
-  name: 'feature-description-iconized',
+  name: 'feature-iconized',
   props: ['model']
 });
 </script>

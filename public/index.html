@@ -114,30 +114,12 @@
     <meta name="msapplication-TileImage" content="<%= BASE_URL %>img/icons/msapplication-icon-144x144.png" />
     <meta name="msapplication-TileColor" content="<%= process.env.VUE_APP_PRIMARY_COLOR %>" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>/img/icons/apple-icon-180.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="<%= BASE_URL %>/img/icons/apple-icon-167.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="<%= BASE_URL %>/img/icons/apple-icon-152.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="<%= BASE_URL %>/img/icons/apple-icon-120.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>img/icons/apple-icon-180.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="<%= BASE_URL %>img/icons/apple-icon-167.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="<%= BASE_URL %>img/icons/apple-icon-152.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<%= BASE_URL %>img/icons/apple-icon-120.png" />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-MSXLHVQ');</script>
-      <!-- End Google Tag Manager -->
-  </head>
-  <body>
-    <% if(process.env.VUE_APP_ROBOTS_NO_INDEX == "1") { %>
-    <meta name="robots" content="noindex" />
-    <% } %>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSXLHVQ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Add to home screen for Android and modern mobile browsers -->
     <link rel="manifest" href="<%= BASE_URL %>manifest.json" />
@@ -163,6 +145,67 @@
     <link rel='dns-prefetch' crossorigin href='https://m.stripe.network' />
     <link rel="dns-prefetch" crossorigin href="https://www.facebook.com">
     <link rel='dns-prefetch' crossorigin href='https://www.googleadservices.com' /> -->
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MSXLHVQ');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script type="application/ld+json" data-vmid="jsonld">
+      {
+        "url": "https://sayabooking.com",
+        "logo": "https://res.cloudinary.com/whynotearth/image/upload/v1583918123/Saya/splash-screen-onloading_zgtap9.png",
+        "name": "Digital for Virtuoso Hotels Simplified | Saya",
+        "@type": "Corporation",
+        "email": "chris@sayabooking.com",
+        "image": "https://res.cloudinary.com/whynotearth/image/upload/v1583918123/Saya/splash-screen-onloading_zgtap9.png",
+        "sameAs": [
+          "https://www.instagram.com/whynot.earth/",
+          "https://www.facebook.com/paulchrisluke/",
+          "https://www.linkedin.com/paulchrisluke/",
+          "https://www.github.com/whynotearth"
+        ],
+        "keyword": "saya booking, virtuoso hotel services, hotel marketing, hotel website design, luxury hotel software",
+        "headline": "Digital for Virtuoso Hotels Simplified",
+        "telephone": "+1 (423) 451-6118",
+        "description": "Saya is the premier virtuoso hotel software suite for Vietnam. Saya combines an end-to-end hotel management system with an AI-powered marketing and customer data platform designed to maximise your bookings. Contact us today to simplify your digital bookings.",
+        "contactPoint": [
+          {
+            "url": "https://stripe.com/contact",
+            "@type": "ContactPoint",
+            "email": "info@stripe.com",
+            "contactType": "customer support"
+          }
+        ],
+        "alternateName": "Saya Booking"
+      }
+    </script>
+  </head>
+  <body>
+    <% if(process.env.VUE_APP_ROBOTS_NO_INDEX == "1") { %>
+    <meta name="robots" content="noindex" />
+    <% } %>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MSXLHVQ"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <form name="Contact" netlify hidden action="/thanks" data-netlify="true">
       <input type="text" name="name" />

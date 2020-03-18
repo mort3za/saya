@@ -1,4 +1,7 @@
 .markdown-content {
+  *:last-of-type {
+    margin-bottom: 0;
+  }
   h1 {
     font-weight: normal;
   }
