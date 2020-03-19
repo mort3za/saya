@@ -234,6 +234,31 @@ export class PageService {
   /**
    *
    */
+  static getLandingPage(params = {}, options = {}) {
+    return new Promise((resolve, reject) => {
+      const configs = Object.assign({}, options, { method: 'get' });
+      configs.headers = Object.assign({}, options.headers, { 'Content-Type': 'application/json' });
+      let url = '/api/v0/pages/slug/{companySlug}/{pageSlug}/landingpage';
+      url = url.replace('{companySlug}', params['companySlug'] + '');
+      url = url.replace('{pageSlug}', params['pageSlug'] + '');
+      configs.url = url;
+      ['companySlug', 'pageSlug'].forEach(key => {
+        params[key] = null;
+      });
+      let data = null;
+      configs.data = data;
+      axios(configs)
+        .then(res => {
+          resolve(res.data);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
+  }
+  /**
+   *
+   */
   static getPages(params = {}, options = {}) {
     return new Promise((resolve, reject) => {
       const configs = Object.assign({}, options, { method: 'get' });
