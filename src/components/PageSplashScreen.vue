@@ -1,36 +1,25 @@
 <template>
   <transition name="fade">
-    <v-overlay :z-index="zindexSplashScreen" :value="overlay" color="primary" :opacity="1" class="text-center">
+    <!-- overlay -->
+    <v-overlay
+      :z-index="zindexSplashScreen"
+      :value="overlay"
+      color="primary"
+      :opacity="1"
+      class="splash-screen text-center"
+    >
       <div>
-        <transition name="fade">
-          <v-img
-            v-if="shouldShowLogo"
-            eager
-            class="logo"
-            contain
-            max-width="95vw"
-            max-height="80vh"
-            :src="
-              transformCloudinaryUrl(
-                'https://res.cloudinary.com/whynotearth/image/upload/v1583918123/Saya/splash-screen-onloading_zgtap9.png',
-                'f_auto'
-              )
-            "
-          ></v-img>
-        </transition>
         <img
-          class="d-none"
-          @load="shouldShowLogo = true"
-          :src="
-            transformCloudinaryUrl(
-              'https://res.cloudinary.com/whynotearth/image/upload/v1583918123/Saya/splash-screen-onloading_zgtap9.png',
-              'f_auto'
-            )
-          "
+          class="splash-logo mb-8"
+          src="https://res.cloudinary.com/whynotearth/image/upload/v1584099679/Saya/Logo%20with%20lines.svg"
+          :alt="title"
         />
+
+        <h1 class="splash-screen--title display-3 font-weight-bold secondary--text mb-12">{{ title }}</h1>
+        <p class="mb-0 body-1 secondary--text mb-8">{{ slogan }}</p>
         <v-progress-circular
           indeterminate
-          color="white"
+          color="secondary"
           :size="24"
           :width="2"
           class="mt-8"
@@ -51,7 +40,8 @@ const visibilityTimeout = 6000;
 export default Vue.extend({
   name: 'page-splash-screen',
   data: () => ({
-    shouldShowLogo: false,
+    title: (process.env.VUE_APP_PROJECT_NAME_SHORT as string).toLowerCase(),
+    slogan: process.env.VUE_APP_PROJECT_SLOGAN,
     zindexSplashScreen,
     visibilityTimedOut: false,
     shouldShowLoading: false
@@ -107,4 +97,16 @@ export default Vue.extend({
 
 <style lang="scss">
 @import '@/styles/utility.scss';
+</style>
+
+<style lang="scss" scoped>
+.splash-screen ::v-deep {
+  .splash-logo {
+    width: rem(266px);
+    max-width: 80vw;
+  }
+  .splash-screen--title {
+    line-height: rem(64px);
+  }
+}
 </style>
