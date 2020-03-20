@@ -8301,7 +8301,7 @@ svgo@^1.0.0:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-swagger-axios-codegen@^0.9.17:
+swagger-axios-codegen@0.9.17:
   version "0.9.17"
   resolved "https://registry.yarnpkg.com/swagger-axios-codegen/-/swagger-axios-codegen-0.9.17.tgz#e6a55c3694c25299d7ac6d368e5678130fbc3a0c"
   integrity sha512-Mm/lfhpYeg2lMSxGegnGRFR7rfTDlajoS37xwoqGzTwqQ6R6HZppeTIxChIdbq5E+C1tzftHGKEWEgL5f/5eIw==
