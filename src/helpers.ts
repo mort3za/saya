@@ -139,11 +139,11 @@ export function toFixedNumber(number, decimals) {
 }
 
 export function getFormattedMetaDescription(text) {
-  return text.substring(0, 180).trim();
+  return (text || '').substring(0, 180).trim();
 }
 
 export function getFormattedMetaTitle(text, { titleCase = true, maxLength = 80 } = {}) {
-  let result = text;
+  let result = text || '';
   if (titleCase) {
     result = startCase(toLower(result));
   }

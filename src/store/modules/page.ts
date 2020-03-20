@@ -29,8 +29,7 @@ export default {
         context.commit('update', { data, slug });
         return data;
       } catch (error) {
-        console.log('get resort issue');
-        return new Error('get resort issue');
+        return error;
       }
     }
   },

@@ -11,40 +11,39 @@
           >
             <landing-component-loader :type="component.type" :model="component.model"></landing-component-loader>
           </landing-component-container>
-
-          <div data-aos="fade-up" class="background em-medium">
-            <v-container class="py-20">
-              <contact-form></contact-form>
-            </v-container>
-          </div>
         </div>
       </div>
-      <page-footer></page-footer>
+      <!-- section 2 -->
+      <landing-component-container
+        v-for="component in filter(sortBy(landing.components, 'order'), ['section', 2])"
+        :key="component.id"
+        :component="component"
+      >
+        <landing-component-loader :type="component.type" :model="component.model"></landing-component-loader>
+      </landing-component-container>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import ContactForm from '@/components/ContactForm.vue';
-import PageFooter from '@/components/PageFooter.vue';
 import LandingComponentContainer from '@/components/LandingComponentContainer.vue';
 import LandingComponentLoader from '@/components/LandingComponentLoader.vue';
 import store from '@/store';
 import aosAnimations from '@/mixins/aos-animations';
 import { getFormattedMetaTitle } from '../helpers';
 import { sortBy, filter } from 'lodash-es';
-const slug = 'Home';
 
 export default {
-  name: 'home-page',
+  name: 'landing-page',
   mixins: [aosAnimations],
+  props: ['slug'],
   components: {
     LandingComponentLoader,
-    ContactForm,
-    PageFooter,
     LandingComponentContainer
   },
   async beforeRouteEnter(to, from, next) {
+    const slug = to.params.id || 'home';
+
     store.commit('loading/updateIsSplashScreenVisible', true);
 
     const promise1 = store.dispatch('page/getItemBySlug', slug);
@@ -55,30 +54,31 @@ export default {
     next();
   },
   metaInfo() {
+    const page = Object.assign({}, { custom: {} }, (this as any).page);
     return {
-      title: getFormattedMetaTitle((this as any).page.title, { titleCase: false }),
+      title: getFormattedMetaTitle(page.title, { titleCase: false }),
       meta: [
         {
           vmid: 'description',
           name: 'description',
-          content: (this as any).page.custom.description
+          content: page.custom && page.custom.description
         }
       ],
       script: [
         {
           vmid: 'jsonld',
           type: 'application/ld+json',
-          json: (this as any).page.custom
+          json: page.custom
         }
       ]
     };
   },
   computed: {
     page() {
-      return store.getters['page/itemBySlug'](slug);
+      return store.getters['page/itemBySlug']((this as any).slug);
     },
     landing() {
-      return store.getters['landing/itemBySlug'](slug);
+      return store.getters['landing/itemBySlug']((this as any).slug);
     }
   },
   methods: {
