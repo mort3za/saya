@@ -58,7 +58,7 @@
         },
         "model": {
             "animation": "fade-up",
-            "body": "Saya is the premier hotel software suite for Vietnam. Saya combines an end-to-end hotel management system with an AI-powered marketing and customer data platform designed to maximise your bookings."
+            "body": "Saya is the premier hotel software suite built in Cambodia, for Cambodia by A2A Digital. Saya combines an end-to-end hotel management system with an AI-powered marketing and customer data platform designed to maximise your bookings."
         }
     }, {
         "type": "Image",
@@ -103,7 +103,7 @@
             "className": "background em-medium body-1 pt-20"
         },
         "model": {
-            "body": "Saya was built to serve the Vietnamese hotel industry as a long-term partner. Saya is fully multilingual between Vietnamese, Chinese, and English, and can handle payments from Visa, Amex, Alipay, and Vietnamese bank accounts right out of the box - and with only 10% commission."
+            "body": "Saya was built to serve the Cambodian hotel industry as a long-term partner. Saya is fully multilingual between Khmer, Chinese, and English, and can handle payments from Visa, Amex, Alipay, and ABA bank accounts right out of the box - and with only 10% commission."
         }
     }, {
         "type": "Spacer",
@@ -320,7 +320,7 @@
             }, {
                 "id": 20,
                 "title": "Payment Processing",
-                "description": "Sayas in-house payments processing engine gives you and your clients access to the most fast and secure hotel payments processor in Vietnam.",
+                "description": "Sayas in-house payments processing engine gives you and your clients access to the most fast and secure hotel payments processor in Cambodia.",
                 "icon": "payment"
             }, {
                 "id": 30,
@@ -372,7 +372,7 @@
         },
         "model": {
             "animation": "fade-up",
-            "body": "WNE are a team based in southeast asia who make best-in-class enterprise level software for medium-to-large companies that unifies all of their marketing, sales processes, and online branding.\n\nSayas clients currently include Volkswagen, Browtricks, and the vKirirom Pine Resort. Collectively, our team have worked with Google, Amazon, Airbnb, and Goldman Sachs."
+            "body": "We are a team based in southeast asia who make best-in-class enterprise level software for medium-to-large companies that unifies all of their marketing, sales processes, and online branding.\n\nSayas clients currently include Volkswagen, Browtricks, and the vKirirom Pine Resort. Collectively, our team have worked with Google, Amazon, Airbnb, and Goldman Sachs."
         }
     }, {
         "type": "Spacer",
