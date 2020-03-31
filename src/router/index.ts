@@ -10,7 +10,14 @@ const routes = [
   {
     name: 'home',
     path: '/',
-    component: () => import(/* webpackChunkName: "Home" */ '@/views/HomePage.vue')
+    component: () => import(/* webpackChunkName: "Landing" */ '@/views/LandingPage.vue'),
+    props: route => ({ slug: 'home' })
+  },
+  {
+    name: 'landing',
+    path: '/page/:id',
+    component: () => import(/* webpackChunkName: "Landing" */ '@/views/LandingPage.vue'),
+    props: route => ({ slug: route.params.id })
   },
   {
     path: '/*/',

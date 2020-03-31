@@ -25,12 +25,11 @@ export default {
   actions: {
     async getItemBySlug(context: any, slug: string) {
       try {
-        const data = await PageService.get({ companySlug, pageSlug: slug });
+        const data = await PageService.slug({ companySlug, pageSlug: slug });
         context.commit('update', { data, slug });
         return data;
       } catch (error) {
-        console.log('get resort issue');
-        return new Error('get resort issue');
+        return error;
       }
     }
   },

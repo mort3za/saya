@@ -1,8 +1,6 @@
 import Vue from 'vue';
+import { PageService } from '@/connection/resources.js';
 import { companySlug } from '@/constants/app';
-import { ajax } from '@/connection/ajax';
-// TODO move to backend
-const landingUrl = '/json/home-landing.json';
 
 export default {
   namespaced: true,
@@ -18,17 +16,11 @@ export default {
   actions: {
     async getItemBySlug(context: any, slug: string) {
       try {
-        const data = (
-          await ajax({
-            baseURL: '',
-            url: landingUrl
-          })
-        ).data;
+        const data = await PageService.landingpage({ companySlug, pageSlug: slug });
         context.commit('update', { data, slug });
         return data;
       } catch (error) {
-        console.log('get resort issue');
-        return new Error('get resort issue');
+        return error;
       }
     }
   },

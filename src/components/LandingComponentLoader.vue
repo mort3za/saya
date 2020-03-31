@@ -6,6 +6,8 @@
   <landing-banner-text v-else-if="type === 'BannerText'" :model="model"></landing-banner-text>
   <landing-features-iconized v-else-if="type === 'FeatureIconized'" :model="model"></landing-features-iconized>
   <landing-spacer v-else-if="type === 'Spacer'" :model="model"></landing-spacer>
+  <landing-contact-form v-else-if="type === 'ContactForm'" :model="model"></landing-contact-form>
+  <landing-page-footer v-else-if="type === 'PageFooter'" :model="model"></landing-page-footer>
 </template>
 
 <script lang="ts">
@@ -17,6 +19,8 @@ import LandingMarkdown from '@/components/LandingMarkdown.vue';
 import LandingBannerText from '@/components/LandingBannerText.vue';
 import LandingFeaturesIconized from '@/components/LandingFeaturesIconized.vue';
 import LandingSpacer from '@/components/LandingSpacer.vue';
+import LandingContactForm from '@/components/LandingContactForm.vue';
+import LandingPageFooter from '@/components/LandingPageFooter.vue';
 
 export default Vue.extend({
   name: 'landing-component-loader',
@@ -30,6 +34,8 @@ export default Vue.extend({
     LandingBannerText,
     LandingFeaturesIconized,
     LandingSpacer,
+    LandingContactForm,
+    LandingPageFooter
   }
 });
 </script>
